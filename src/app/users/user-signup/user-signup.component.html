@@ -1,1 +1,71 @@
-<p>user-signup works!</p>
+<div class="signup-form-container">
+    <form class="signup-form" [formGroup]="signupForm" (ngSubmit)="onSignUpSubmit()">
+        <mat-card>
+            <mat-card-title>User SignUp Form</mat-card-title>
+            <mat-card-content>
+                <p>
+                    <mat-form-field>
+                        <mat-label>Email ID</mat-label>
+                        <input 
+                            matInput
+                            formControlName="emailid"
+                        >
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field>
+                        <mat-label>Password</mat-label>
+                        <input 
+                            matInput 
+                            [type]="hide ? 'password' : 'text'" 
+                            formControlName="password"                             
+                        >
+                        <a mat-icon-button matSuffix (click)="hide = !hide" >
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </a>
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field>
+                        <mat-label>Confirm Password</mat-label>
+                        <input 
+                            matInput 
+                            [type]="hide ? 'password' : 'text'" 
+                            formControlName="confirmPassword"                             
+                        >
+                        <a mat-icon-button matSuffix (click)="hide = !hide" >
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </a>
+                    </mat-form-field>
+                    <span class="error" *ngIf="signupForm.hasError('noMatch') 
+                    && signupForm.get('password').valid 
+                    && signupForm.get('confirmPassword').touched">Password entered doesnot match</span>
+                </p>
+                <p>
+                    <mat-form-field>
+                        <mat-label>Security Question</mat-label>
+                        <mat-select
+                        formControlName="selectSecurityQuestion"> 
+                          <mat-option *ngFor="let question of securityQuestions" [value]="question">
+                            {{question}}
+                          </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field>
+                        <mat-label>Security Answer</mat-label>
+                        <input 
+                            matInput 
+                            formControlName="securityAnswer"                             
+                        >                        
+                    </mat-form-field>
+                </p>
+                <p class="signup-button">
+                    <button mat-raised-button color="primary">Submit</button>
+                    <button mat-raised-button type="reset"  >Reset</button>
+                </p>
+            </mat-card-content>
+        </mat-card>
+    </form>    
+</div>

@@ -17,6 +17,6 @@ export class AppComponent {
   ];
 
   toggleSignIn(){
-    this.isSignInEnabled = !this.isSignInEnabled;
+    this.isSignInEnabled = !this.isSignInEnabled;    
   }
 }

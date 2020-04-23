@@ -5,6 +5,7 @@ import { AdminConfigComponent } from './admin/admin-config/admin-config.componen
 import { ReportAnalysisComponent } from './reports/report-analysis/report-analysis.component';
 import { IssueCreateComponent } from './issues/issue-create/issue-create.component';
 import { IssueDetailComponent } from './issues/issue-detail/issue-detail.component';
+import { UserSignupComponent } from './users/user-signup/user-signup.component';
 
 
 const routes: Routes = [
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'admin/admin-config', component: AdminConfigComponent},
   { path: 'reports/report-analysis', component: ReportAnalysisComponent},
   { path: 'issues/issue-detail', component: IssueDetailComponent},
-  { path: 'issues/issue-create', component: IssueCreateComponent }
+  { path: 'issues/issue-create', component: IssueCreateComponent },
+  { path: 'users/user-signup', component: UserSignupComponent}
 ];
 
 @NgModule({

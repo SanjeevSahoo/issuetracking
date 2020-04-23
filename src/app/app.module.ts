@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule} from '@angular/forms';
+import { ReactiveFormsModule} from '@angular/forms';
 
 
 
@@ -12,6 +14,9 @@ import { MatButtonModule} from '@angular/material/button';
 import { MatIconModule} from '@angular/material/icon';
 import { MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule} from '@angular/material/input';
+import { MatCardModule} from '@angular/material/card';
+import { MatGridListModule} from '@angular/material/grid-list';
+import { MatSelectModule} from '@angular/material/select';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { IssueDetailComponent } from './issues/issue-detail/issue-detail.component';
@@ -36,12 +41,17 @@ import { UserSigninComponent } from './users/user-signin/user-signin.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,      
+    BrowserAnimationsModule, 
+    FormsModule,     
+    ReactiveFormsModule,
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatCardModule,
+    MatGridListModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

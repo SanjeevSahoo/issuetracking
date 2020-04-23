@@ -1,8 +1,25 @@
-.background{
+.signin-background{
     position: absolute;
     top:0;
     left:0;
-    height:100vh;
+    height:calc(100vh - 4rem);
     width:100vw;
-    background:rgba(155, 152, 152, 0.1);
+    background:rgba(155, 152, 152, 0.3);
+    margin-top:4rem;    
+}
+
+.signin-form {
+    position:absolute;
+    top:4rem;
+    right:0;
+    
+    .mat-form-field {
+        width:100%;
+        min-width: 300px;
+    }
+
+    .signin-button {
+        display:flex;
+        justify-content: space-between;
+    }    
 }

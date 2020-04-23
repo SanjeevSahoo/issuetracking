@@ -1,0 +1,20 @@
+.signup-form-container {    
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    height:calc(100vh - 8rem);
+
+    .signup-form{        
+        width:50%;
+        min-width: 400px;
+       
+        .mat-form-field {
+            width:100%;            
+        }
+
+        .signup-button {
+            display:flex;
+            justify-content: space-between;
+        }
+    }
+}

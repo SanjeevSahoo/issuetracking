@@ -17,4 +17,4 @@
     <a mat-button>@sanjusoft72539@gmail.com</a>
     <a mat-raised-button color="primary"><mat-icon>help</mat-icon></a>
 </mat-toolbar>
-<app-user-signin *ngIf="isSignInEnabled"></app-user-signin>
+<app-user-signin *ngIf="isSignInEnabled" (signInClosed)="toggleSignIn()"></app-user-signin>

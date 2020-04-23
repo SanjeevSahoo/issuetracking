@@ -2,3 +2,12 @@
 
 
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-card-title{
+    font-size:1.25rem;
+}
+
+form span.error {
+    font-size:0.8rem;
+    color:red;
+}
