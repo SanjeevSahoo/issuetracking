@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-issue-detail',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IssueDetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userSerive:UserService) { 
+    this.userSerive.getAllUsers().subscribe(result=>{
+      console.log(result);
+    },error=>{
+      console.log(error);
+    });
+  }
 
   ngOnInit(): void {
   }

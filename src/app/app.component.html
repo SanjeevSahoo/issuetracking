@@ -4,8 +4,11 @@
             <a mat-mini-fab routerLink="/dashboard" ><mat-icon>home</mat-icon></a>
             Issue Tracking
         </span>
-        <div class="main-heading-toolbar">
-            <a mat-button *ngFor="let menu of appMenus" routerLink="{{menu.route}}">{{menu.name}}</a>
+        <div class="main-heading-toolbar" *ngIf="currenUser">
+            <a mat-button *ngFor="let menu of appMenus" routerLink="{{menu.route}}">{{menu.name}}</a>            
+            <a mat-raised-button color="accent" (click)="logout()">Logout</a>            
+        </div>
+        <div class="main-heading-toolbar" *ngIf="!currenUser">
             <a mat-raised-button color="accent" (click)="toggleSignIn()">Sign In</a>            
         </div>
     </div>

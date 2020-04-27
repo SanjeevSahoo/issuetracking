@@ -6,15 +6,18 @@ import { ReportAnalysisComponent } from './reports/report-analysis/report-analys
 import { IssueCreateComponent } from './issues/issue-create/issue-create.component';
 import { IssueDetailComponent } from './issues/issue-detail/issue-detail.component';
 import { UserSignupComponent } from './users/user-signup/user-signup.component';
+import { HomeComponent } from './home/home.component';
+import { AuthGuard } from './services/auth-guard';
 
 
 const routes: Routes = [
-  { path: '', component:DashboardComponent },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'admin/admin-config', component: AdminConfigComponent},
-  { path: 'reports/report-analysis', component: ReportAnalysisComponent},
-  { path: 'issues/issue-detail', component: IssueDetailComponent},
-  { path: 'issues/issue-create', component: IssueCreateComponent },
+  { path: '', redirectTo:'home',pathMatch:'full' },
+  { path: 'home', component:HomeComponent },
+  { path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuard] },
+  { path: 'admin/admin-config', component: AdminConfigComponent, canActivate:[AuthGuard]},
+  { path: 'reports/report-analysis', component: ReportAnalysisComponent, canActivate:[AuthGuard]},
+  { path: 'issues/issue-detail', component: IssueDetailComponent, canActivate:[AuthGuard]},
+  { path: 'issues/issue-create', component: IssueCreateComponent, canActivate:[AuthGuard] },
   { path: 'users/user-signup', component: UserSignupComponent}
 ];
 

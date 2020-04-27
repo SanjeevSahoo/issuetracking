@@ -11,6 +11,8 @@
                         matInput 
                         ngModel 
                         name="emailid" 
+                        minlength="5"
+                        maxlength="50"
                         required 
                         email
                         #emailid="ngModel"
@@ -25,14 +27,19 @@
                         [type]="hide ? 'password' : 'text'" 
                         ngModel 
                         name="password" 
+                        minlength="8"
+                        maxlength="16"
                         required
                         #password="ngModel"
                     >
-                    <a mat-icon-button matSuffix (click)="hide = !hide" >
+                    <button type="button" mat-icon-button matSuffix (click)="hide = !hide" tabindex="-1" >
                         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                    </a>
+                    </button>
                 </mat-form-field>
-            </p>            
+            </p>         
+            <p>
+                <span class="error" *ngIf="errorMessage">{{errorMessage}}</span>
+            </p>   
             <p class="signin-button">
                 <button mat-raised-button color="primary">Login</button>
                 <a mat-button color="primary" (click)="onSignInClosed()" routerLink="/users/user-signup">Sign Up</a>
