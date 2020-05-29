@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -48,6 +49,7 @@ import { JwtInterceptor } from './jwt.interceptor';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
+    FlexLayoutModule,
     HttpClientModule,
     MatToolbarModule,
     MatButtonModule,

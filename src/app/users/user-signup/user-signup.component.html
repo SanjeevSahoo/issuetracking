@@ -8,9 +8,9 @@
       <mat-card-title>User SignUp Form</mat-card-title>
       <mat-card-content>
         <mat-form-field>
-            <mat-label>User Name</mat-label>
-            <input matInput formControlName="username" />
-          </mat-form-field>
+          <mat-label>User Name</mat-label>
+          <input matInput formControlName="username" />
+        </mat-form-field>
         <mat-form-field>
           <mat-label>Email ID</mat-label>
           <input matInput formControlName="emailid" />
@@ -23,7 +23,13 @@
             [type]="hide ? 'password' : 'text'"
             formControlName="password"
           />
-          <button type="button" mat-icon-button matSuffix (click)="hide = !hide" tabindex="-1">
+          <button
+            type="button"
+            mat-icon-button
+            matSuffix
+            (click)="hide = !hide"
+            tabindex="-1"
+          >
             <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
           </button>
         </mat-form-field>
@@ -34,7 +40,13 @@
             [type]="hide ? 'password' : 'text'"
             formControlName="confirmPassword"
           />
-          <button type="button" mat-icon-button matSuffix (click)="hide = !hide" tabindex="-1">
+          <button
+            type="button"
+            mat-icon-button
+            matSuffix
+            (click)="hide = !hide"
+            tabindex="-1"
+          >
             <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
           </button>
         </mat-form-field>
@@ -65,8 +77,10 @@
           <input matInput formControlName="securityAnswer" />
         </mat-form-field>
         <p>
-          <span class="error" *ngIf="errorMessage">{{errorMessage}}</span>
-          <span class="success" *ngIf="successMessage">{{successMessage}}</span>
+          <span class="error" *ngIf="errorMessage">{{ errorMessage }}</span>
+          <span class="success" *ngIf="successMessage">{{
+            successMessage
+          }}</span>
         </p>
         <p class="signup-button">
           <button mat-raised-button color="primary">Submit</button>
